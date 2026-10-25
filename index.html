@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Siopao 💙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sky" id="sky"></div>
+  <div class="sparkles" id="sparkles"></div>
+
+  <header class="topbar">
+    <a href="#" class="logo">💙 Blue World</a>
+    <span id="pageCounter">01 / 05</span>
+  </header>
+
+  <main class="stage">
+
+    <!-- SLIDE 1: WELCOME -->
+    <section class="slide active" data-slide="0">
+      <div class="alien">
+        <div class="alien-ears">
+          <span></span><span></span>
+        </div>
+        <div class="alien-head">
+          <div class="alien-eyes"><i></i><i></i></div>
+          <div class="alien-nose"></div>
+          <div class="alien-mouth"></div>
+          <div class="alien-cheek left"></div>
+          <div class="alien-cheek right"></div>
+        </div>
+        <div class="alien-heart">💗</div>
+      </div>
+
+      <span class="eyebrow">✨ A MAGICAL LITTLE SURPRISE ✨</span>
+      <h1 class="hero-title">Happy Birthday<br><span>My Siopao</span></h1>
+      <p class="description">
+        I made this little universe just for you.
+        Are you ready to discover what's inside?
+      </p>
+
+      <button class="primary-btn" onclick="goToSlide(1)">
+        Start the Magic <span>💫</span>
+      </button>
+      <div class="hint">Click to discover something special ↓</div>
+    </section>
+
+    <!-- SLIDE 2: GIFT -->
+    <section class="slide" data-slide="1">
+      <span class="eyebrow">🎁 YOUR FIRST SURPRISE</span>
+      <h2>A Little Gift for You</h2>
+      <p class="description">Tap the gift and see what happens!</p>
+
+      <button class="gift-button" onclick="openGift()" aria-label="Open gift">
+        <span id="giftEmoji">🎁</span>
+        <span class="gift-ring"></span>
+      </button>
+
+      <div id="giftMessage" class="reveal-box">
+        <h3>Surprise! 💖</h3>
+        <p>You are a little ray of sunshine in this world.</p>
+        <button class="secondary-btn" onclick="goToSlide(2)">
+          See Our Memories 📸
+        </button>
+      </div>
+
+      <button class="text-btn" onclick="goToSlide(0)">← Go Back</button>
+    </section>
+
+    <!-- SLIDE 3: PHOTO SLIDESHOW -->
+    <section class="slide" data-slide="2">
+      <span class="eyebrow">📸 LITTLE MOMENTS, BIG MEMORIES</span>
+      <h2>Our Favorite Moments</h2>
+      <p class="description">Every picture has a little story. 💙</p>
+
+      <div class="photo-viewer">
+        <button class="arrow prev" onclick="changePhoto(-1)"
+          aria-label="Previous photo">❮</button>
+
+        <div class="photo-frame">
+          <img id="featuredPhoto" src="photos/photos1.jpg"
+            alt="Our special memory">
+          <div class="photo-caption" id="photoCaption">
+            A moment to remember 💙
+          </div>
+        </div>
+
+        <button class="arrow next" onclick="changePhoto(1)"
+          aria-label="Next photo">❯</button>
+      </div>
+
+      <div class="photo-dots" id="photoDots"></div>
+
+      <div class="button-row">
+        <button class="secondary-btn" onclick="goToSlide(1)">← Back</button>
+        <button class="primary-btn" onclick="goToSlide(3)">
+          Next Surprise 💌
+        </button>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: LOVE LETTER -->
+    <section class="slide" data-slide="3">
+      <span class="eyebrow">💌 OPEN WHEN YOU NEED A SMILE</span>
+      <h2>A Letter Just for You</h2>
+
+      <button class="letter-button" onclick="revealLetter()"
+        aria-label="Open letter">💌</button>
+
+      <div class="letter-card" id="letterCard">
+        <div class="letter-decoration">🌷 ✨ 🌷</div>
+        <p id="letterText"></p>
+        <div class="signature">With lots of love, 💙</div>
+      </div>
+
+      <div class="button-row">
+        <button class="secondary-btn" onclick="goToSlide(2)">← Memories</button>
+        <button class="primary-btn" onclick="goToSlide(4)">
+          Final Surprise 🎉
+        </button>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: FINAL SURPRISE -->
+    <section class="slide" data-slide="4">
+      <div class="final-stars">✨ ⭐ ✨</div>
+      <div class="final-heart">💖</div>
+
+      <span class="eyebrow">THE LAST LITTLE SURPRISE</span>
+      <h2 class="final-title">You Are So Special!</h2>
+      <p class="description">
+        I hope this little website makes you smile.
+        You deserve beautiful moments, endless happiness,
+        and all the love in the world. 🩵
+      </p>
+
+      <button class="primary-btn" onclick="celebrate()">
+        Make It Sparkle! ✨
+      </button>
+
+      <div class="celebration-message" id="celebrationMessage">
+        <h3>Sending you a million hugs! 🫂💙</h3>
+        <p>Never forget how amazing you are. 🌸</p>
+      </div>
+
+      <div class="button-row">
+        <button class="secondary-btn" onclick="goToSlide(3)">← Letter</button>
+        <button class="primary-btn" onclick="restartShow()">
+          Replay Everything ↻
+        </button>
+      </div>
+    </section>
+
+    <nav class="slide-navigation" aria-label="Slide navigation">
+      <button onclick="goToSlide(0)" aria-label="Welcome slide">💙</button>
+      <button onclick="goToSlide(1)" aria-label="Gift slide">🎁</button>
+      <button onclick="goToSlide(2)" aria-label="Photo slide">📸</button>
+      <button onclick="goToSlide(3)" aria-label="Letter slide">💌</button>
+      <button onclick="goToSlide(4)" aria-label="Final slide">✨</button>
+    </nav>
+
+  </main>
+
+  <footer>Made with love, just for you 💙</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
